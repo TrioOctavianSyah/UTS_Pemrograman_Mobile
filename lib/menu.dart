@@ -23,8 +23,8 @@ class menu extends StatelessWidget {
                   children: <Widget>[
                     Image.asset(
                       'img/io.jpg',
-                      width: 150 ,
-                      height: 150 ,
+                      width: 150,
+                      height: 150,
                     ),
                   ],
                 ),
@@ -59,15 +59,39 @@ class menu extends StatelessWidget {
                 ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                children: <Widget>[
+                  //Widget Pertama
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      FlatButton(
+                        child: Text('KIRIM LIRS'),
+                        color: Colors.blueAccent,
+                        textColor: Colors.white,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => lirs()));
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
             Column(
               children: <Widget>[
-                //Widget Pertama
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.send_outlined),
-                      iconSize: 50,
+                    FlatButton(
+                      child: Text('KIRIM LIHS'),
+                      color: Colors.blueAccent,
+                      textColor: Colors.white,
                       onPressed: () {
                         Navigator.push(
                             context,
@@ -75,23 +99,6 @@ class menu extends StatelessWidget {
                                 builder: (context) => lirs()));
                       },
                     ),
-                    Text('Kirim LIRS')
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.send_outlined),
-                      iconSize: 50,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => lihs()));
-                      },
-                    ),
-                    Text('Kirim LIHS')
                   ],
                 ),
               ],
